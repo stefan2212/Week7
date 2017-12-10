@@ -59,10 +59,10 @@ public class StudentDAOImpl implements StudentDAO {
     }
 
     @Override
-    public void updateStudentById(long id) {
+    public void updateStudentById(long id,String newName) {
         entityManager.getTransaction().begin();
         Student toUpdateStudent = entityManager.find(Student.class,id);
-        toUpdateStudent.setName("JOHN DOE");
+        toUpdateStudent.setName(newName);
         entityManager.getTransaction().commit();
     }
 

@@ -20,7 +20,7 @@ public interface StudentDAO {
 
     void deleteStudentById(long id);
 
-    void updateStudentById(long id);
+    void updateStudentById(long id,String newName);
 
     Student getStudentById(long id);
 }

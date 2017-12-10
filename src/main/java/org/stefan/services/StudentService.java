@@ -50,7 +50,10 @@ public class StudentService {
         studentDAO.deleteStudentById(id);
     }
 
-    public void updateStudentByIde(long id) {studentDAO.updateStudentById(id);}
+    public void updateStudentById(long id,String newName) {studentDAO.updateStudentById(id,newName);}
 
     public Student getStudentById(long id){return studentDAO.getStudentById(id);}
+
+    public void updateStudentByIdCriteria
+
 }

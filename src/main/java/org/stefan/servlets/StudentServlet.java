@@ -33,9 +33,9 @@ public class StudentServlet extends HttpServlet {
         studentService.deleteStudentById(id);
     }
 
-    private void updateStudentById(long id)
+    private void updateStudentById(long id,String newName)
     {
-        studentService.updateStudentByIde(id);
+        studentService.updateStudentById(id,newName);
     }
 
     public Student getStudent(int id){
@@ -48,26 +48,6 @@ public class StudentServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         PrintWriter printWriter = resp.getWriter();
-
-        Student firstStudent = new Student();
-        firstStudent.setName("Gabor");
-        firstStudent.setEmail("gabor.silviu@yahoo.com");
-        this.addStudent(firstStudent);
-
-        Student secondStudent = new Student();
-        secondStudent.setName("Lazar");
-        secondStudent.setEmail("lazar.lila@yahoo.com");
-        this.addStudent(secondStudent);
-
-        Student thirdStudent = new Student();
-        thirdStudent.setName("Cernescu");
-        thirdStudent.setEmail("cernescu.stefan@yahoo.com");
-        this.addStudent(thirdStudent);
-
-        this.updateStudentById(40);
-        this.deleteStudentById(41);
-
-        Student selectedStudent = this.getStudent(42);
 
         List<Student> students = studentService.getStudents();
         printWriter.write("All the students" + students + '\n');
